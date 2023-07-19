@@ -29,9 +29,9 @@ def get_response(message):
     response = openai.ChatCompletion.create(
         model='gpt-3.5-turbo-16k',
         messages=[
-            {"role":"system", "content":"You are a polite, helpful postpartum care assistant who answers anything related to POSTPARTUM CARE, for other questions politely say you cannot answer, if you have any concern related then I can help."},
-            {"role":"user","content": message},
-            {"role":"assistant","content":""},
+            {"role":"system", "content":"You are a polite, helpful postpartum care assistant"},
+            # {"role":"user","content": message},
+            # {"role":"assistant","content":""},
 
             {"role": "user", "content": message + " "+ " ".join(embeddings_str) }
         ],
